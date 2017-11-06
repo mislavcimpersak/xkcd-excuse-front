@@ -1,16 +1,121 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108448133-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+<head>
+    <meta charset="utf-8">
+    <title>Xkcd-excuse.com - Your own excuse now in Xkcd format!</title>
 
-            gtag('config', 'UA-108448133-1');
-        </script>
-    </head>
-    <body>
-        soon, my love...
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <!-- Twitter share button -->
+    <script>window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+            t._e.push(f);
+        };
+
+        return t;
+    }(document, "script", "twitter-wjs"));</script>
+
+    <style>
+        @font-face {
+            font-family: 'xkcd-script';
+            src: url('fonts/xkcd-script.ttf') format('ttf'),
+                 url('fonts/xkcd-script.woff') format('woff');
+            }
+
+        h1 {
+            font-family: xkcd-script;
+            font-style: normal;
+            text-transform: uppercase;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container center-align">
+        <header>
+            <h1><a href="/" title="Xkcd-excuse.com">xkcd-excuse.com</a></h1>
+            <h5>The easiest way to get your slacking excuse in hip xkcd format!</h5>
+        </header>
+
+        <main>
+            <div class="row">
+                <form class="col s12" action="https://function.xkcd-excuse.com/v1/excuse/" method="GET">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="excuse_who" class="validate">
+                            <label for="excuse_who">Who is slacking?</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="excuse_why" class="validate">
+                            <label for="excuse_why">What is their excuse?</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="excuse_what" class="validate">
+                            <label for="excuse_what">What are they shouting?</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div>
+                <img class="responsive-img" src="https://github.com/mislavcimpersak/xkcd-excuse-generator/raw/master/blank_excuse.png" alt="">
+            </div>
+
+        </main>
+
+        <footer class="page-footer">
+            <div class="container">
+
+                <div class="row left-align">
+                    <p>
+                        <a class="grey-text text-lighten-3" href="https://xkcd.com/303/">Original image</a> created by Randall Munroe from XKCD. Released under <a class="grey-text text-lighten-3" href="https://creativecommons.org/licenses/by-nc/2.5/">Creative Commons Attribution-NonCommercial 2.5 License</a>.
+                    </p>
+                </div>
+                <div class="row left-align">
+                    <p>
+                        <a class="grey-text text-lighten-3" href="https://github.com/ipython/xkcd-font">XKCD-Font</a> created by iPython team. Released under <a class="grey-text text-lighten-3" href="https://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0 License</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    <a class="twitter-share-button" href="https://twitter.com/intent/tweet?hashtag=xkcdexcuse">
+                        Tweet</a>
+
+                        <!-- TODO facebook share button https://developers.facebook.com/docs/plugins/share-button/ -->
+
+                        created in 2017 by <strong><a class="grey-text text-lighten-6" href="https://twitter.com/MislavCimpersak">Mislav Cimperšak</a></strong>
+
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container">
+                        Code for displaying and generating images freely available in two GitHub repos: <a class="grey-text text-lighten-6" href="https://github.com/mislavcimpersak/xkcd-excuse-front">xkcd-excuse-front</a> and <a class="grey-text text-lighten-6" href="https://github.com/mislavcimpersak/xkcd-excuse-generator">xkcd-excuse-generator</a>.
+                    </div>
+                </div>
+            </footer>
+
+        </div>
     </body>
-</html>
+    </html>
