@@ -18,6 +18,9 @@ using a simple form!
 
 Originaly created as an example for [Python Hrvatska meetup](https://www.meetup.com/Python-Hrvatska/events/242639630/) held on September 12, 2017 and for [Python Belgrade meetup](https://www.meetup.com/PythonBelgrade/events/243547584/) held on September 29, 2017 on which I gave [a talk](https://mislavcimpersak.github.io/serverless-talk/) on serverless technology.
 
+-----
+
+This repo is the frontend part of the xkcd-excuse.com project. Code for the backend part can be found in [xkcd-excuse-generator](https://github.com/mislavcimpersak/xkcd-excuse-generator) repo.
 
 ## Legal
 
