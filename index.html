@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Xkcd-excuse.com - Your own excuse now in Xkcd format!</title>
 
+    <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
     <!-- Compiled and minified CSS -->
@@ -12,6 +13,10 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
+    <!-- jQuery form validation plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+
+    <!-- Material icons -->
     <!-- Twitter share button -->
     <script>window.twttr = (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0],
@@ -29,6 +34,8 @@
 
         return t;
     }(document, "script", "twitter-wjs"));</script>
+
+    <script src="static/js/main.js"></script>
 
     <style>
         @font-face {
@@ -48,6 +55,18 @@
         footer.page-footer {
             background-color: #546e7a;
         }
+
+        .input-field div.error{
+            position: relative;
+            top: -1rem;
+            left: 0rem;
+            font-size: 0.8rem;
+            color:#FF4081;
+            -webkit-transform: translateY(0%);
+            -ms-transform: translateY(0%);
+            -o-transform: translateY(0%);
+            transform: translateY(0%);
+        }
     </style>
 
 </head>
@@ -60,32 +79,39 @@
 
         <main>
             <div class="row">
-                <form class="col s12" action="https://function.xkcd-excuse.com/v1/excuse/" method="GET">
+                <form id="excuse_form" class="col s12" action="https://function.xkcd-excuse.com/v1/excuse/" method="GET">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="text" id="excuse_who" class="validate">
-                            <label for="excuse_who">Who is slacking?</label>
+                            <input type="text" id="excuse_who" class="validate" name="who" data-error=".excuse_who_error">
+                            <label id="excuse_who_label" for="excuse_who" required="required">Who is slacking?</label>
+                            <div class="excuse_who_error"></div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="text" id="excuse_why" class="validate">
-                            <label for="excuse_why">What is their excuse?</label>
+                            <input type="text" id="excuse_why" class="validate" name="why" data-error=".excuse_why_error">
+                            <label id="excuse_why_label" for="excuse_why">What is their excuse?</label>
+                            <div class="excuse_why_error"></div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="text" id="excuse_what" class="validate">
+                            <input type="text" id="excuse_what" class="validate" name="what" data-error=".excuse_what_error">
                             <label for="excuse_what">What are they shouting?</label>
+                            <div class="excuse_what_error"></div>
                         </div>
                     </div>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Generate!
+                        <!-- <i class="material-icons left">camera</i> -->
+                        <!-- <i class="material-icons right">crop_original</i> -->
+                    </button>
                 </form>
             </div>
 
             <div>
-                <img class="responsive-img" src="https://github.com/mislavcimpersak/xkcd-excuse-generator/raw/master/blank_excuse.png" alt="">
+                <img id="excuse_img" class="responsive-img" src="https://github.com/mislavcimpersak/xkcd-excuse-generator/raw/master/blank_excuse.png" alt="">
             </div>
 
         </main>
