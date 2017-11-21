@@ -1,7 +1,18 @@
+function copyToClipboard(element) {
+    var temp = $("<input>");
+    $("body").append(temp);
+    temp.val($(element).text()).select();
+    document.execCommand("copy");
+    temp.remove();
+};
+
 $(document).ready(function() {
 
     var frm = $('#excuse_form');
     var error_class = "error left-align";
+
+    var excuse_img_url_div = $("#excuse_img_url");
+    excuse_img_url_div.hide();
 
     Materialize.updateTextFields();
 
@@ -36,9 +47,17 @@ $(document).ready(function() {
                 data: frm.serialize(),
                 success: function (data) {
                     var img = $("#excuse_img");
-                    img.attr("src", data["data"]["image_url"]);
+                    var img_url = data["data"]["image_url"]
+                    img.attr("src", img_url);
+
+                    var img_url_label = excuse_img_url_div.children("label");
+                    img_url_label.text(img_url);
+
+                    excuse_img_url_div.show();
                 },
                 error: function (data) {
+                    excuse_img_url_div.hide();
+
                     var errors = data.responseJSON["errors"];
 
                     Array.prototype.forEach.call(errors, error => {
@@ -56,5 +75,10 @@ $(document).ready(function() {
                 }
             });
         }
+    });
+
+    $(".btn_copy").click(function () {
+        var element = $(this).attr("data");
+        copyToClipboard($('.' + element));
     });
 });
