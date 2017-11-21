@@ -1,9 +1,11 @@
-function copyToClipboard(element) {
-    var temp = $("<input>");
-    $("body").append(temp);
-    temp.val($(element).text()).select();
+// https://stackoverflow.com/a/30905277/
+function copyToClipboard(elementId) {
+    var aux = document.createElement("input");
+    aux.setAttribute("value", document.getElementById(elementId).innerHTML);
+    document.body.appendChild(aux);
+    aux.select();
     document.execCommand("copy");
-    temp.remove();
+    document.body.removeChild(aux);
 };
 
 $(document).ready(function() {
@@ -79,6 +81,6 @@ $(document).ready(function() {
 
     $(".btn_copy").click(function () {
         var element = $(this).attr("data");
-        copyToClipboard($('.' + element));
+        copyToClipboard(element);
     });
 });
