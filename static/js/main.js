@@ -1,13 +1,3 @@
-// https://stackoverflow.com/a/30905277/
-function copyToClipboard(elementId) {
-    var aux = document.createElement("input");
-    aux.setAttribute("value", document.getElementById(elementId).innerHTML);
-    document.body.appendChild(aux);
-    aux.select();
-    document.execCommand("copy");
-    document.body.removeChild(aux);
-};
-
 $(document).ready(function() {
 
     var frm = $('#excuse_form');
@@ -52,10 +42,12 @@ $(document).ready(function() {
                     var img_url = data["data"]["image_url"]
                     img.attr("src", img_url);
 
-                    var img_url_label = excuse_img_url_div.children("label");
-                    img_url_label.text(img_url);
+                    var img_url_input = $("#img_url");
+                    img_url_input.attr("value", img_url);
 
                     excuse_img_url_div.show();
+
+                    new Clipboard('.btn_img_url');
                 },
                 error: function (data) {
                     excuse_img_url_div.hide();
@@ -77,10 +69,5 @@ $(document).ready(function() {
                 }
             });
         }
-    });
-
-    $(".btn_copy").click(function () {
-        var element = $(this).attr("data");
-        copyToClipboard(element);
     });
 });
