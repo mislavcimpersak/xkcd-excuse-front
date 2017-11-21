@@ -42,8 +42,8 @@ $(document).ready(function() {
                     var img_url = data["data"]["image_url"]
                     img.attr("src", img_url);
 
-                    var img_url_input = $("#img_url");
-                    img_url_input.attr("value", img_url);
+                    var img_url_label = $("#img_url");
+                    img_url_label.text(img_url);
 
                     excuse_img_url_div.show();
 
