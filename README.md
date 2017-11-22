@@ -20,7 +20,19 @@ Originaly created as an example for [Python Hrvatska meetup](https://www.meetup.
 
 -----
 
-This repo is the frontend part of the xkcd-excuse.com project. Code for the backend part can be found in [xkcd-excuse-generator](https://github.com/mislavcimpersak/xkcd-excuse-generator) repo.
+This repo is the frontend part of the [xkcd-excuse.com](https://xkcd-excuse.com) project. Code for the backend part can be found in [xkcd-excuse-generator](https://github.com/mislavcimpersak/xkcd-excuse-generator) repo.
+
+## Tech
+
+Frontend built using [Materialize](http://materializecss.com/) and some clunky JS.
+
+For backend tech checkout the [XKCD excuse generator](https://github.com/mislavcimpersak/xkcd-excuse-generator#tech) repo's README.
+
+### Infrastructure
+
+Since this is a side project that will obviously never make any money, costs should idealy be minimal. Everything is served behind CloudFlare CDN, even the API that is served from AWS Lambda through AWS API Gateway. Frontend is served on Github Pages.
+
+![](https://github.com/mislavcimpersak/xkcd-excuse-generator/raw/master/infrastructure.png)
 
 ## Legal
 
