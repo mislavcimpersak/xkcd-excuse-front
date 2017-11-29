@@ -1,3 +1,8 @@
+$(document).on({
+    ajaxStart: function() {$('.progress_bar_row').show();},
+    ajaxStop: function() {$('.progress_bar_row').hide();}
+});
+
 $(document).ready(function() {
 
     var frm = $('#excuse_form');

@@ -81,6 +81,12 @@
             transform: translateY(0%);
         }
 
+        .progress_bar_row {
+            height: 0px;
+            margin-top: -10px;
+            margin-bottom: 0px;
+        }
+
         #excuse_img_url {
             margin: 10px 0px;
             color: #596D79;
@@ -153,7 +159,13 @@
                 </form>
             </div>
 
-            <div>
+            <div class="row progress_bar_row" style="display: none;">
+                <div class="progress col offset-s4 s4">
+                    <div class="indeterminate"></div>
+                </div>
+            </div>
+
+            <div class="row">
                 <img id="excuse_img" class="responsive-img" src="https://github.com/mislavcimpersak/xkcd-excuse-generator/raw/master/blank_excuse.png" alt="">
             </div>
 
