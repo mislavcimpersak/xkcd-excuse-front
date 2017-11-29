@@ -9,7 +9,6 @@ $(document).ready(function() {
     var error_class = "error left-align";
 
     var excuse_img_url_div = $("#excuse_img_url");
-    excuse_img_url_div.hide();
 
     Materialize.updateTextFields();
 
