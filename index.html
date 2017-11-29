@@ -131,7 +131,7 @@
                 <form id="excuse_form" class="col s12" action="https://function.xkcd-excuse.com/v1/excuse/" method="GET">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="text" id="excuse_who" class="validate" name="who" data-error=".excuse_who_error">
+                            <input type="text" id="excuse_who" class="validate" name="who" data-error=".excuse_who_error" tabindex="1">
                             <label id="excuse_who_label" for="excuse_who" required="required">Who is slacking?</label>
                             <div class="excuse_who_error"></div>
                         </div>
@@ -139,7 +139,7 @@
 
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="text" id="excuse_why" class="validate" name="why" data-error=".excuse_why_error">
+                            <input type="text" id="excuse_why" class="validate" name="why" data-error=".excuse_why_error" tabindex="2">
                             <label id="excuse_why_label" for="excuse_why">What is their excuse?</label>
                             <div class="excuse_why_error"></div>
                         </div>
@@ -147,12 +147,12 @@
 
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="text" id="excuse_what" class="validate" name="what" data-error=".excuse_what_error">
+                            <input type="text" id="excuse_what" class="validate" name="what" data-error=".excuse_what_error" tabindex="3">
                             <label for="excuse_what">What are they shouting?</label>
                             <div class="excuse_what_error"></div>
                         </div>
                     </div>
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Generate!
+                    <button class="btn waves-effect waves-light" type="submit" name="action" tabindex="4">Generate!
                     </button>
                 </form>
             </div>
@@ -169,7 +169,7 @@
 
             <div class="row" id="excuse_img_url" style="display: none;">
                 <label id="img_url" class="img_url"></label>
-                <button class="btn waves-effect waves-light btn_img_url" data-clipboard-target="#img_url"><i class="material-icons">insert_link</i></button>
+                <button class="btn waves-effect waves-light btn_img_url" data-clipboard-target="#img_url" tabindex="5"><i class="material-icons">insert_link</i></button>
             </div>
         </main>
 
