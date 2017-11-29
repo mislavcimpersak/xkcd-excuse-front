@@ -12,9 +12,29 @@ $(document).ready(function() {
     frm.validate({
         errorClass: 'invalid',
         rules: {
-            who: "required",
-            why: "required",
-            what: "required"
+            who: {
+                required: true,
+                maxlength: 49  // number of letters 'i' that can fit
+            },
+            why: {
+                required: true,
+                maxlength: 98
+            },
+            what: {
+                required: true,
+                maxlength: 32
+            }
+        },
+        messages: {
+            who: {
+                maxlength: "Please, make your text shorter."
+            },
+            why: {
+                maxlength: "Please, make your text shorter."
+            },
+            what: {
+                maxlength: "Please, make your text shorter."
+            }
         },
         errorElement : 'div',
         errorClass: error_class,
