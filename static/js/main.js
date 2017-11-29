@@ -1,10 +1,14 @@
+$(document).on({
+    ajaxStart: function() {$('.progress_bar_row').show();},
+    ajaxStop: function() {$('.progress_bar_row').hide();}
+});
+
 $(document).ready(function() {
 
     var frm = $('#excuse_form');
     var error_class = "error left-align";
 
     var excuse_img_url_div = $("#excuse_img_url");
-    excuse_img_url_div.hide();
 
     Materialize.updateTextFields();
 
@@ -27,13 +31,13 @@ $(document).ready(function() {
         },
         messages: {
             who: {
-                maxlength: "Please, make your text shorter."
+                maxlength: "Text too long."
             },
             why: {
-                maxlength: "Please, make your text shorter."
+                maxlength: "Text too long."
             },
             what: {
-                maxlength: "Please, make your text shorter."
+                maxlength: "Text too long."
             }
         },
         errorElement : 'div',
