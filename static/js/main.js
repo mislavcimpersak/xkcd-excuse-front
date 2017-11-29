@@ -31,13 +31,13 @@ $(document).ready(function() {
         },
         messages: {
             who: {
-                maxlength: "Please, make your text shorter."
+                maxlength: "Text too long."
             },
             why: {
-                maxlength: "Please, make your text shorter."
+                maxlength: "Text too long."
             },
             what: {
-                maxlength: "Please, make your text shorter."
+                maxlength: "Text too long."
             }
         },
         errorElement : 'div',
