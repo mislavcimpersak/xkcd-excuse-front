@@ -31,13 +31,16 @@ $(document).ready(function() {
         },
         messages: {
             who: {
-                maxlength: "Text too long."
+                required: "💔 This field is required.",
+                maxlength: "💔 Text too long."
             },
             why: {
-                maxlength: "Text too long."
+                required: "💔 This field is required.",
+                maxlength: "💔 Text too long."
             },
             what: {
-                maxlength: "Text too long."
+                required: "💔 This field is required.",
+                maxlength: "💔 Text too long."
             }
         },
         errorElement : 'div',
