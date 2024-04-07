@@ -28,6 +28,9 @@
     <!-- Compiled and minified Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
+    <!-- Pyodide -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+
     <!-- Material icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -162,7 +165,7 @@
                             <div class="excuse_what_error"></div>
                         </div>
                     </div>
-                    <button class="btn waves-effect waves-light" type="submit" name="action" tabindex="4">Generate!
+                    <button id="excuse_generate" class="btn waves-effect waves-light" type="submit" name="action" tabindex="4">Generate!
                     </button>
                 </form>
             </div>
@@ -175,11 +178,6 @@
 
             <div class="">
                 <img id="excuse_img" class="responsive-img" src="https://github.com/mislavcimpersak/xkcd-excuse-generator/raw/master/blank_excuse.png" alt="">
-            </div>
-
-            <div class="row" id="excuse_img_url" style="display: none;">
-                <label id="img_url" class="img_url"></label>
-                <button class="btn waves-effect waves-light btn_img_url" data-clipboard-target="#img_url" tabindex="5"><i class="material-icons">insert_link</i></button>
             </div>
         </main>
 
@@ -210,14 +208,10 @@
             </div>
             <div class="footer-copyright">
                 <div class="container">
-                    Code for displaying and generating images freely available in not one, but two GitHub repos: <a class="grey-text text-lighten-6" href="https://github.com/mislavcimpersak/xkcd-excuse-front">xkcd-excuse-front</a> and <a class="grey-text text-lighten-6" href="https://github.com/mislavcimpersak/xkcd-excuse-generator">xkcd-excuse-generator</a>.
+                    Code for displaying and generating images freely available in: <a class="grey-text text-lighten-6" href="https://github.com/mislavcimpersak/xkcd-excuse-front">xkcd-excuse-front</a>.
                 </div>
             </div>
             <div class="footer-sponsors">
-                <div class="container">
-                    Error monitoring by <br>
-                    <a href="https://www.bugsnag.com"><img src="bugsnag_logo_navy.svg" alt="" width="100px"></a>
-                </div>
             </div>
         </footer>
 
